@@ -54,7 +54,7 @@
     [self tableView:self.tableView didSelectRowAtIndexPath:[self.tableView indexPathForCell:self.selectedCell]];
 }
 
-// 根据一个点寻找对应cell并返回cell的frame
+// 根据一个点寻找对应cell并返回cell
 - (UITableViewCell *)searchCellWithPoint:(CGPoint)point {
     UITableViewCell *cell = nil;
     for (UIView *view in self.tableView.subviews) {
