@@ -30,7 +30,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-//    self.tableView.backgroundColor = [UIColor greenColor];
     self.title = @"3DTouchDemo";
     self.tableView.rowHeight = 100;
     // 重要
@@ -100,7 +99,7 @@
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     cell.textLabel.text = self.items[indexPath.row];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row + 1];
+//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row + 1];
     
     return cell;
 }

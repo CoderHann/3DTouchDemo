@@ -26,11 +26,24 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>imageone</string>
+			<string>showItemIconOne</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>one</string>
+			<string>静态标签一</string>
 			<key>UIApplicationShortcutItemType</key>
 			<string>shortcutTypeOne</string>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>key1</key>
+				<string>value1</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>showItemIconTwo</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>静态标签二</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>shortcutTypeTwo</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>key1</key>

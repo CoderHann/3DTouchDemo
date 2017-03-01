@@ -18,13 +18,13 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     self.title = self.navTitle;
-    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(86, 100, 200, 150)];
-    imageView.image = [UIImage imageNamed:@"imageone"];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(86, 100, 200, 200)];
+    imageView.image = [UIImage imageNamed:@"blog_usr_icon.jpeg"];
     UILabel *githubName = [[UILabel alloc] init];
-    githubName.text = @"ITBigSea";
+    githubName.text = @"CoderHann";
     githubName.textColor = [UIColor blueColor];
     githubName.backgroundColor = [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1];
-    githubName.frame = CGRectMake(136, 270, 100, 30);
+    githubName.frame = CGRectMake(136, 320, 100, 30);
     githubName.textAlignment = NSTextAlignmentCenter;
     
     [self.view addSubview:imageView];
