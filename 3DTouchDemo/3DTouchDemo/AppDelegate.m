@@ -28,8 +28,8 @@
     // 动态添加快捷启动
     
     UIApplicationShortcutIcon *iconThree = [UIApplicationShortcutIcon iconWithTemplateImageName:@"showItemIconThree"];
-    UIApplicationShortcutItem *item = [[UIApplicationShortcutItem alloc] initWithType:@"shortcutTypeThree" localizedTitle:@"动态标签" localizedSubtitle:nil icon:iconThree userInfo:nil];
-    [[UIApplication sharedApplication] setShortcutItems:@[item]];
+    UIApplicationShortcutItem *itemThree = [[UIApplicationShortcutItem alloc] initWithType:@"shortcutTypeThree" localizedTitle:@"动态标签" localizedSubtitle:nil icon:iconThree userInfo:nil];
+    [[UIApplication sharedApplication] setShortcutItems:@[itemThree]];
     
     
     [self.window makeKeyAndVisible];
@@ -67,8 +67,10 @@
         
     } else if ([shortcutItem.type isEqualToString:@"shortcutTypeTwo"]) {
         detailVC.navTitle = @"静态标签二";
+        
     } else if ([shortcutItem.type isEqualToString:@"shortcutTypeThree"]) {
         detailVC.navTitle = @"动态标签";
+        
     }
     
     [nav pushViewController:detailVC animated:YES];

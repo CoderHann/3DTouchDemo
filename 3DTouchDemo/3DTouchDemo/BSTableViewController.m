@@ -19,13 +19,7 @@
 
 @implementation BSTableViewController
 
-- (NSMutableArray *)items {
-    if (!_items) {
-        _items = [[NSMutableArray alloc] initWithObjects:@"one",@"two",@"three",@"four",@"five",@"six",@"seven",@"eight", nil];
-    }
-    return _items;
-}
-
+#pragma mark -LifyCycle
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,6 +37,7 @@
     self.selectedCell = [self searchCellWithPoint:location];
     previewingContext.sourceRect = self.selectedCell.frame;
     
+    NSLog(@"peek");
     BSDetailViewController *detailVC = [[BSDetailViewController alloc] init];
     detailVC.delegate = self;
     detailVC.navTitle = self.selectedCell.textLabel.text;
@@ -50,6 +45,7 @@
 }
 
 - (void)previewingContext:(id<UIViewControllerPreviewing>)previewingContext commitViewController:(UIViewController *)viewControllerToCommit {
+    NSLog(@"pop");
     [self tableView:self.tableView didSelectRowAtIndexPath:[self.tableView indexPathForCell:self.selectedCell]];
 }
 
@@ -71,6 +67,7 @@
 }
 
 #pragma mark - BSDetailViewControllerDelegate
+
 - (void)detailViewControllerDidSelectedBackItem:(BSDetailViewController *)detailVC {
     NSLog(@"back");
 }
@@ -79,11 +76,8 @@
     [self.items removeObject:navTitle];
     [self.tableView reloadData];
 }
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
-}
+#pragma mark -UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.items.count;
@@ -98,11 +92,13 @@
     }
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    
     cell.textLabel.text = self.items[indexPath.row];
-//    cell.detailTextLabel.text = [NSString stringWithFormat:@"%zd",indexPath.row + 1];
     
     return cell;
 }
+
+#pragma mark -UITableViewDelegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -112,6 +108,15 @@
     
     [self.navigationController pushViewController:detailVC animated:YES];
 }
+
+#pragma mark -LazyMethods
+- (NSMutableArray *)items {
+    if (!_items) {
+        _items = [[NSMutableArray alloc] initWithObjects:@"one",@"two",@"three",@"four",@"five",@"six",@"seven",@"eight", nil];
+    }
+    return _items;
+}
+
 
 @end
 
